@@ -1,0 +1,138 @@
+:root {
+  /* Colors */
+  /* Primary */
+
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+
+  /* Neutral */
+
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+  --transparent-gry:rgba(229, 239, 245, 0.56);
+  /* paddings */
+  --padding-content : 1rem ;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
+
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.container{
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 350px;
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas: 
+    "header"
+    "subscription"
+    "why-us";
+    margin: 1rem;
+}
+
+.header{
+    grid-area: header;
+    background-color: #fff;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: var(--padding-content);
+    color: var(--grayish-blue);
+}
+
+span{
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.header__title{
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.header__caption{
+  color: var(--bright-yellow);
+  font-weight: 700;
+}
+
+.header__description{
+  line-height: 2rem;
+}
+
+.card-subscription{
+    grid-area: subscription;
+    background-color: var(--cyan);
+    padding: var(--padding-content);
+    color: var(--transparent-gry);
+}
+
+
+.card-subscription__title,
+.container__why-us-title{
+  color: var(--light-gray);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0.5rem;
+}
+
+.card-subscription{
+  color: var(--light-gray);
+}
+
+.card-subscription__price{
+  color: var(--transparent-gry);
+}
+
+.card-subscription__button{
+  width: 100%;
+  padding: 1rem;
+  color: var(--light-gray);
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--bright-yellow);
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: -1px 12px 9px -6px rgba(4, 4, 4, 0.332);
+  margin-bottom: 0.5rem;
+}
+
+.container__why-us{
+    grid-area: why-us;
+    border-radius: 0 0 0.5rem 0.5rem;
+    background-color: hsla(179, 62%, 43%, 0.8);
+    padding: var(--padding-content);
+}
+
+.container__why-us-item{
+  margin: 0.2rem;
+  color:rgba(229, 239, 245, 0.56);
+}
