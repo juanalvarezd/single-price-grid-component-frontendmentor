@@ -9,17 +9,16 @@
 
   --light-gray: hsl(204, 43%, 93%);
   --grayish-blue: hsl(218, 22%, 67%);
-  --transparent-gry:rgba(229, 239, 245, 0.56);
+  --transparent-gry: rgba(229, 239, 245, 0.56);
   /* paddings */
-  --padding-content : 1rem ;
+  --padding-content: 1rem;
 }
 
 html {
   box-sizing: border-box;
   font-size: 16px;
   font-weight: 400;
-  font-family: 'Karla', sans-serif;
-
+  font-family: "Karla", sans-serif;
 }
 *,
 *:before,
@@ -27,16 +26,15 @@ html {
   box-sizing: inherit;
 }
 
-body{
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: var(--light-gray);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .attribution {
@@ -47,71 +45,72 @@ body{
   color: hsl(228, 45%, 44%);
 }
 
-.container{
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: 350px;
-    grid-template-rows: repeat(3,auto);
-    grid-template-areas: 
+.container {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
     "header"
     "subscription"
     "why-us";
-    margin: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  box-shadow: -1px 6px 30px 4px rgba(189, 189, 189, 0.85);
 }
 
-.header{
-    grid-area: header;
-    background-color: #fff;
-    border-radius: 0.5rem 0.5rem 0 0;
-    padding: var(--padding-content);
-    color: var(--grayish-blue);
+.header {
+  grid-area: header;
+  background-color: #fff;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: var(--padding-content);
+  color: var(--grayish-blue);
 }
 
-span{
+span {
   font-size: 2rem;
   color: #fff;
   font-weight: 700;
 }
 
-.header__title{
+.header__title {
   color: var(--cyan);
   font-weight: 700;
 }
 
-.header__caption{
+.header__caption {
   color: var(--bright-yellow);
   font-weight: 700;
 }
 
-.header__description{
+.header__description {
   line-height: 2rem;
 }
 
-.card-subscription{
-    grid-area: subscription;
-    background-color: var(--cyan);
-    padding: var(--padding-content);
-    color: var(--transparent-gry);
+.card-subscription {
+  grid-area: subscription;
+  background-color: var(--cyan);
+  padding: var(--padding-content);
+  color: var(--transparent-gry);
 }
 
-
 .card-subscription__title,
-.container__why-us-title{
+.container__why-us-title {
   color: var(--light-gray);
   font-weight: 700;
   font-size: 1.1rem;
   margin: 0.5rem;
 }
 
-.card-subscription{
+.card-subscription {
   color: var(--light-gray);
 }
 
-.card-subscription__price{
+.card-subscription__price {
   color: var(--transparent-gry);
 }
 
-.card-subscription__button{
+.card-subscription__button {
   width: 100%;
   padding: 1rem;
   color: var(--light-gray);
@@ -121,18 +120,38 @@ span{
   background-color: var(--bright-yellow);
   border: none;
   border-radius: 0.3rem;
-  box-shadow: -1px 12px 9px -6px rgba(4, 4, 4, 0.332);
+  box-shadow: -1px 3px 20px 4px rgba(121, 121, 121, 0.633);
   margin-bottom: 0.5rem;
 }
 
-.container__why-us{
-    grid-area: why-us;
-    border-radius: 0 0 0.5rem 0.5rem;
-    background-color: hsla(179, 62%, 43%, 0.8);
-    padding: var(--padding-content);
+.container__why-us {
+  grid-area: why-us;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: hsla(179, 62%, 43%, 0.8);
+  padding: var(--padding-content);
 }
 
-.container__why-us-item{
+.container__why-us-item {
   margin: 0.2rem;
-  color:rgba(229, 239, 245, 0.56);
+  color: rgba(229, 239, 245, 0.56);
+}
+
+@media (min-width: 991px) {
+  .container {
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "header header"
+      "subscription why-us";
+  }
+
+  .container__why-us {
+    border-radius: 0 0 0.5rem 0;
+    padding-bottom: 2rem;
+  }
+
+  .card-subscription {
+    border-radius: 0 0 0 0.5rem;
+    padding-bottom: 2rem;
+  }
 }
